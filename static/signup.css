@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+body{
+    text-align:center;
+    background-image: linear-gradient(135deg, #007991 30%, #78ffd6 90%);
+ }
+ 
+ .register-wrapper {
+      position: relative;
+      z-index: 3;
+      font-size:18px;
+      color: #999999;
+    }
+ .register-wrapper * {
+      box-sizing: border-box;
+    }
+ 
+ .register-wrapper form input {
+      display: inline-block;
+      width: 100%;
+      padding: 0 20px;
+      line-height: 50px;
+      height: 65px;
+      background-color: white;
+      border: 2px solid #e6e6e6;
+      border-bottom-width: 3px;
+      border-radius: 5px;
+      outline: 0;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+ 
+ .register-wrapper form input:not(:last-child) {
+      margin-bottom: 20px;
+    }
+ 
+     .register-wrapper form input[type="email"]:focus, 
+     .register-wrapper form input[type="email"]:active, 
+     .register-wrapper form input[type="password"]:focus, 
+     .register-wrapper form input[type="password"]:active {
+           border-color: #cccccc;
+         }
+ 
+ .register-wrapper form input[type="submit"] {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      padding: 0 20px;
+      font-size: 1rem;
+      background-color: #78ffd6;
+      cursor: pointer;
+   
+    }
+button {
+    position: relative;
+    display: block;
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 35%;
+    padding: 30px;
+    background-color: #78ffd6;
+    border-radius: 5px; 
+    color: #0000; 
+    font-size: x-large;
+    cursor: pointer;
+}
+button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+ 
+ .register-block {
+      position: relative;
+      display: block;
+      width: 30%;
+      margin: auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 5px;     
+    }
+ 
+ .register-block:before, 
+ .register-block:after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-color: white;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+      -webkit-transform: scale(0.9) translate(0, 0);
+              transform: scale(0.9) translate(0, 0);
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    .box {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+        color: #4a4a4a;
+        display: block;
+        padding: 2em;
+      }
+      
+      a.box:hover, a.box:focus {
+        box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #485fc7;
+      }
+      
+      a.box:active {
+        box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #485fc7;
+      }
+      
+ 
+    .notification.is-danger {
+        background-color: #f14668;
+        color: #fff;
+        border-radius: 0.5em;
+        padding: 1.5em;
+      }
+      .notification a:not(.button):not(.dropdown-item) {
+        color: currentColor;
+        text-decoration: underline;
+      }
+ 
+ h1{
+         
+         color: #ffff;
+         text-decoration: none;
+         padding-top:1em;
+   }   
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 1em;
+    background-color: #d0bebe17;
+    border-radius: 10px;
+    
+}
+nav h1{
+    text-transform: uppercase;
+    color:#fff;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 10px;
+    font-size: larger;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    position: relative;
+    display: inline-block;
+}
+a::before{
+    content: attr(data-text);
+    color:#fff;
+    position: absolute;
+    left: 0;
+    top: 0%;
+    width: 0%;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: .5s;
+    border-bottom: 3px solid orange;
+
+}
+a:hover::before{
+    width: 100%;
+}
+@media(max-width:700px){
+    nav{
+        display: block;
+        text-align: center;
+    }
+    nav ul li{
+        display: block;
+        padding: 10px 0;
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="static/home.css">
+	    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+    </head>
+<body>
+<nav>
+  <h1>   </h1>
+  <ul>   
+    <li> <a href="{{ url_for('main.index') }}" >
+    Home</a></li> 
+    <li> <a href="{{ url_for('auth.signup') }}" >
+    Sign Up</a></li>
+    <li>{% if not current_user.is_authenticated %}<a href="{{ url_for('auth.login') }}" class="navbar-item">
+    Login</a>{% endif %}</li>    
+    <li>{% if current_user.is_authenticated %}
+    <a href="{{ url_for('main.feedback') }}" >
+    Give Feedback</a>{% endif %}</li>
+    <li>{% if current_user.is_authenticated %}
+    <a href="{{ url_for('auth.logout') }}" >
+    Logout</a>{% endif %}</li>
+  </ul>
+</nav>
+
+<p>
+  This system makes it possible for you  the passenger to rate the driving <br>
+  after each matatu trip. This is done by using the 5-star rating system <br>
+  found under the give feedback tab and adding comments about how the <br>
+  driving was. The feedback given is then analyzed and given a positivity score  </p>
+
+</body>
+</html>

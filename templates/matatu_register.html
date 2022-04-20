@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Register Matatu</title> 
+	 <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="static/signup.css">
+     <link rel="stylesheet" type="text/css" href="static/view.css">
+
+ </head>
+ <body>
+<nav>
+  <h1>   </h1>
+  <ul>
+    <li><a href="{{ url_for('main.index') }}">Home</a></li>
+    <li> <a href="{{ url_for('main.about') }}" >
+    About</a></li>
+</ul>
+</nav>
+    <div class="content">
+		<div class="register-wrapper">
+		<div class="register-block">
+		<h3 class="register-title">Register Matatu</h3>
+        <div class="box">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-danger">
+                    {{ messages[0] }}. Go to <a href="{{ url_for('auth.driver_login') }}">login page</a>.
+                </div>
+            {% endif %}
+            {% endwith %}
+			<p></p>
+			<form method="POST" action="/driver_signup">
+                <input type="matatu_plate_no" name="matatu_plate_no" placeholder="Matatu Number Plate" autofocus="">
+                <input type="text" name="matatu_model" placeholder="Matatu Model" autofocus="">
+                <input type="text" name="owner_name" placeholder="Owner Name" autofocus="">
+                <input type="submit" value="Register Matatu"/>
+			</form>
+		</div>
+		</div>
+</div>
+{# {% for item in values%}
+        <p>ID: {{item.id}}, Matatu Plate Number: {{item.matatu_plate_no}}, Matatu Model: {{item.matatu_model}}, Owner Name: {{item.owner_name}}</p>
+{% endfor %} #}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Performing Drivers</title> 
+	 <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="static/signup.css">
+     <link rel="stylesheet" type="text/css" href="static/view.css">
+
+ </head>
+<body>
+<nav>
+  <h1>   </h1>
+  <ul>
+    <li><a href="{{ url_for('main.index') }}">Home</a></li>
+    <li> <a href="{{ url_for('main.about') }}" >
+    About</a></li>
+</ul>
+</nav>
+
+<table class="driver" style="color:initial">
+<tr><th>ID </th> <th>First Name</th> <th>Last Name</th> <th>Phone Number</th> <th>Email</th> <th>Rating</th></tr>
+{% for item in values %}
+
+<tr><td>{{item.id}}</td> <td>{{item.driver_fname}}</td> <td>{{item.driver_lname}}</td> <td>{{item.driver_phone_num}}</td> <td>{{item.driver_email}}</td> <td>{{item.avg_rating}}</td></tr>
+
+{% endfor %} 
+</table>

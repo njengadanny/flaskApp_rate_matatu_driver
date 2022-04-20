@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" type="text/css" href="static/home.css">
+	    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+    </head>
+<body>
+<nav>
+  <h1>   </h1>
+  <ul>    
+    <li> <a href="{{ url_for('auth.signup') }}" >
+    Sign Up</a></li>
+    <li>{% if not current_user.is_authenticated %}<a href="{{ url_for('auth.login') }}" class="navbar-item">
+    Login</a>{% endif %}</li>    
+    <li>{% if current_user.is_authenticated %}
+    <a href="{{ url_for('main.feedback') }}" >
+    Give Feedback</a>{% endif %}</li>
+    <li>{% if current_user.is_authenticated %}
+    <a href="{{ url_for('auth.logout') }}" >
+    Logout</a>{% endif %}</li>
+    <li> <a href="{{ url_for('main.about') }}" >
+    About</a></li>
+  </ul>
+</nav>
+
+<p>
+  Give Feedback on Your Matatu Trip <br><br>
+This is a web based application that allows you, the passenger to rate matatu drivers after each trip </p>
+
+</body>
+</html>

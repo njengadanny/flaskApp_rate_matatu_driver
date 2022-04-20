@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Thank You</title>
+        <link rel="stylesheet" type="text/css" href="static/home.css">
+	    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Nova+Mono|Roboto+Condensed" rel="stylesheet">
+    </head>
+<body>
+<nav>
+  <h1>   </h1>
+  <ul>    
+    <li>{% if current_user.is_authenticated %}
+    <a href="{{ url_for('auth.logout') }}" >
+    Logout</a>{% endif %}</li>
+    <li> <a href="{{ url_for('main.about') }}" >
+    About</a></li>
+  </ul>
+</nav>
+
+<p>
+  Thank You for Your Feedback
+</p>
+
+</body>
+</html>
